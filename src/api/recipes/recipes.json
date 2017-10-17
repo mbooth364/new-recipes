@@ -1,0 +1,56 @@
+[
+    {
+      "recipeId": 1,
+      "name": "Big Easy Balls",
+      "category": "tapas",
+      "cost": 0.98,
+      "starRating": 4.8,
+      "ingredients": "chicken, sausage, rice, cheese",
+      "imageUrl": ""
+    },
+    {
+      "recipeId": 2,
+      "name": "Buff Balls",
+      "category": "tapas",
+      "cost": 0.78,
+      "starRating": "3.6",
+      "ingredients": "chicken, redhot, cheese",
+      "imageUrl": "https://s3-media2.fl.yelpcdn.com/bphoto/0kiVfKsI9EvFPz1zDvIIwQ/o.jpg"
+    },
+    {
+      "recipeId": 3,
+      "name": "CheeseBurger",
+      "category": "sandwich",
+      "cost": 1.03,
+      "starRating": 5,
+      "ingredients": "burger, cheese, tomatoes, lettuce, bun",
+      "imageUrl": "http://i2.wp.com/www.foodrepublic.com/wp-content/uploads/2012/03/033_FR11785.jpg?resize=700%2C%20466"
+    },
+    {
+      "recipeId": 4,
+      "name": "Porkys Revenge",
+      "category": "sandwich",
+      "cost": 1.29,
+      "starRating": 4.8,
+      "ingredients": "pulled pork, onion ring, redhot, cheese, bun",
+      "imageUrl": "http://www.simplyrecipes.com/wp-content/uploads/2007/11/pulled-pork-sandwich-640-dm.jpg"
+    },
+    {
+      "recipeId": 5,
+      "name": "BBQ Picnic",
+      "category": "quesadilla",
+      "cost": 1.26,
+      "starRating": 4.8,
+      "ingredients": "pulled pork, slaw, cheese, tortilla",
+      "imageUrl": "http://del.h-cdn.co/assets/17/34/1600x800/landscape-1503523207-delish-sloppy-joe-quesadillas-07.jpg"
+    },
+    {
+      "recipeId": 6,
+      "name": "Pesto",
+      "category": "quesadilla",
+      "cost": 1.24,
+      "starRating": 4.8,
+      "ingredients": "pesto, mozzarella, tomatoes, tortilla",      
+      "imageUrl": "https://createbakemake.com/wp-content/uploads/2016/04/Spinach-and-Cheese-Quesadilla-feature-320x300.jpg"
+    }
+  ]

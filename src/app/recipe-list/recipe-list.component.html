@@ -1,0 +1,70 @@
+<div class='panel panel-primary'>
+  <div class='panel-heading'>
+      {{pageTitle}}
+  </div>
+
+<div class='panel-body'>
+  <div class='row'>
+      <!-- <div class='col-md-2'>Filter by:</div> -->
+      <div class='col-md-4'>
+        <label> Filter by:</label>
+          <input class="form-control" type = 'text' [(ngModel)]='listFilter'/>
+      </div><br><br><br>
+        <h2>Filtered By: {{ listFilter }}</h2><br>
+        <div class="row">
+          <div class="col-md-3">
+              <button class="btn btn-primary" (dblclick)="myFontSize= {}" (click)="myFontSize={'font-size': '30px'}">Large Font</button>                      
+          </div>
+          <div class="col-md-3">
+              <button class="btn btn-danger" (dblclick)="myStyleRed= {}" (click)="myStyleRed={color:'red'}">Red</button>              
+          </div>
+          <div class="col-md-3">
+              <button class="btn btn-primary" (click)="myStyleBlue={color:'blue'}">blue</button>              
+          </div>
+          <div class="col-md-3">
+              <button class="btn btn-success" (click)="myStyleGreen={color:'green'}">green</button>              
+          </div>
+        </div>
+  </div><br>
+  
+  <div class='table-responsive'>
+      <table class='table' *ngIf = 'recipes && recipes.length'>
+          <thead>
+              <tr>
+                  <th>
+                      <button class='btn btn-primary'
+                        (click)="toggleImage()">
+                      {{ showImage ? 'Hide' : 'Show' }} Image
+                      </button>
+                  </th>
+                  <th (click)="toggleHighlight(1)" [ngClass]="{'my-class': highlightedDiv === 1 }">Recipe Name</th>
+                  <th [ngStyle]="myStyleGreen">Cost</th>
+                  <th [ngStyle]="myStyleRed">Category</th>
+                  <th [ngStyle]="myStyleBlue">Ingredients</th>
+                  <th>5 Star Rating</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr [ngStyle]='myFontSize' *ngFor="let recipe of filteredRecipes">
+                  <td>
+                    <img *ngIf="showImage"
+                         [src]="recipe.imageUrl"
+                         [title]="recipe.name"
+                         [style.width.px]="imageWidth"
+                         [style.margin.px]="imageMargin">
+                  </td>
+                  <td><a [routerLink]="['/recipes', recipe.recipeId]">
+                      {{ recipe.name | uppercase }}
+                      </a>
+                  </td>
+                  <td>{{ recipe.cost | currency: 'USD' : true: '1.2-2'}}</td>
+                  <td>{{ recipe.category}}</td>
+                  <td>{{ recipe.ingredients | convertToSpaces: ',' | convertToSpaces: ',' }}</td>
+                  <td><app-star [rating]='recipe.starRating'
+                          (ratingClicked)="onRatingClicked($event)"></app-star></td>              
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+</div>

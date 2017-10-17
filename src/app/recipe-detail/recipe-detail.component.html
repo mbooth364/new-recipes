@@ -1,0 +1,33 @@
+<div class='panel panel-primary' *ngIf='recipe'>
+  <div class='panel-heading'>
+    {{pageTitle + ': ' + recipe.name}}
+  </div>
+  <div class='panel-footer'>
+    <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+      <i class='glyphicon glyphicon-chevron-left'>Back</i>
+    </a>
+    
+    <table>
+        <thead>
+            <tr>
+      
+                <th (click)="toggleHighlight(1)" [ngClass]="{'my-class': highlightedDiv === 1 }">Recipe Name</th>
+                <th [ngStyle]="myStyleGreen">Cost</th>
+                <th [ngStyle]="myStyleRed">Category</th>
+                <th [ngStyle]="myStyleBlue">Ingredients</th>
+                <th>5 Star Rating</th>
+            </tr>
+        </thead>
+    <tbody>
+        <tr>
+            
+            <td>{{ recipe.cost | currency: 'USD' : true: '1.2-2'}}</td>
+            <td>{{ recipe.category}}</td>
+            <td>{{ recipe.ingredients | convertToSpaces: ',' | convertToSpaces: ',' }}</td>
+            <td><app-star [rating]='recipe.starRating'
+                    (ratingClicked)="onRatingClicked($event)"></app-star></td>              
+        </tr>
+    </tbody>
+</table>
+  </div>
+</div>
